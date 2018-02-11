@@ -1,0 +1,9 @@
+[
+  {
+    "caption": "Lebab Transform",
+    "children": [{
+      "caption": "Transform to ES6",
+      "command": "lebabtransform"
+    }]
+  }
+]

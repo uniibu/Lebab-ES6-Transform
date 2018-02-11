@@ -1,0 +1,37 @@
+[
+  {
+    "id": "tools",
+    "children": [{
+      "id": "lebabTools",
+      "caption": "Lebab Transform",
+      "children": [{
+        "caption": "Transform to ES6",
+        "command": "lebabtransform"
+      }]
+    }]
+  },
+  {
+    "id": "preferences",
+    "children": [{
+      "id": "package-settings",
+      "children": [{
+        "caption": "Lebab Transform",
+        "children": [{
+          "command": "open_file",
+          "args": {
+            "file": "${packages}/Lebab-ES6-Transform/LebabTransform.sublime-settings"
+          },
+          "caption": "Settings – Default"
+        }, {
+          "command": "open_file",
+          "args": {
+            "file": "${packages}/User/LebabTransform.sublime-settings"
+          },
+          "caption": "Settings – User"
+        }, {
+          "caption": "-"
+        }]
+      }]
+    }]
+  }
+]

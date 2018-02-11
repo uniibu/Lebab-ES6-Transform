@@ -1,0 +1,22 @@
+
+{
+  // runs lebab on the current js file upon saving
+  "format_on_save": true,
+  // shows the lebab warning message via sublime panel
+  "show_warnings": true,
+  // safe transforms https://github.com/lebab/lebab#safe-transforms
+  "transforms": [
+      "arrow",
+      "arg-rest",
+      "obj-method",
+      "obj-shorthand",
+      "class",
+      "let",
+      "includes",
+      "template",
+      "for-of",
+      "exponent",
+      "default-param",
+      "commonjs"
+  ]
+}
