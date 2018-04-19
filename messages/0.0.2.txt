@@ -1,0 +1,8 @@
+Lebab-ES6-Transform 0.0.2 changelog
+
+CHANGES/FIXES
+
++ added .no-sublime-package
++ fix source code, reuse view instead of calling sublime.active_view
++ use traceback.print_exc() to print traceback on sublime console
++ fix readme.md's settings example
