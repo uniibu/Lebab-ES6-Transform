@@ -33,7 +33,7 @@ NOTE: To see a full list of transforms visit [Lebab](https://github.com/lebab/le
 
 Here are the default settings:
 
-```json
+```js
 
 {
   // runs lebab on the current js file upon saving
