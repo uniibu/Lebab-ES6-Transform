@@ -1,0 +1,7 @@
+Lebab-ES6-Transform 0.0.3 changelog
+
+CHANGES/FIXES
+
++ remove sublime error popup - sublime.error_message(str(sys.exc_info()[1]))
++ remove print(proc.stdout.read()), and remove stdout=PIPE option for Popen since it does not actually prints anything
++ remove isJavascript function and directly use view.match_selector(0, 'source.js') to check if file is javascript
