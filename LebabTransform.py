@@ -29,15 +29,11 @@ class LebabtransformCommand(sublime_plugin.TextCommand):
             cdir = os.path.dirname(self.view.file_name())
             p = execute(command, cdir, self.view)
         except:
-            # Something bad happened.
-            # Print traceback on sublime's console
             traceback.print_exc()
-            # Print and show the error message on sublime's error window
-            sublime.error_message(str(sys.exc_info()[1]))
 
 class LebabtransformEventListener(sublime_plugin.EventListener):
     def on_post_save_async(self, view):
-        if (get_pref("format_on_save",view) and isJavascript(view)):
+        if (get_pref("format_on_save",view) and view.match_selector(0, 'source.js')):
             view.window().run_command("lebabtransform")
 
 def clear_status(view):
@@ -55,8 +51,6 @@ def show_status_msg(proc,view):
         panel_view.set_read_only(False)
         panel_view.run_command('insert', {'characters': ''.join(msg.split('  '))})
         panel_view.set_read_only(True)
-    else:
-        print(proc.stdout.read())
 
 def get_pref(key,view):
     global_settings = sublime.load_settings(SETTINGS_FILE)
@@ -69,18 +63,6 @@ def get_pref(key,view):
 
     return value
 
-def isJavascript(view):
-    name = view.file_name()
-    project_settings = view.settings()
-    if (name and os.path.splitext(name)[1][1:] in ["js"]):
-        return True
-
-    syntax = project_settings.get("syntax")
-    if (syntax and "javascript" in syntax.split("/")[-1].lower()):
-        return True
-
-    return False
-
 def get_lebab_exec():
     platform = "win.exe" if (USER_OS == 'Windows') else USER_OS
     lebabexec = "lebab-" + platform.lower()
@@ -90,7 +72,7 @@ def get_lebab_exec():
 
 def execute(cmd, cdir, view):
     try:
-        with Popen(cmd,stdout=PIPE, stdin=PIPE,
+        with Popen(cmd, stdin=PIPE,
             stderr=PIPE, cwd=cdir, shell=USER_OS == 'Windows',universal_newlines=True) as proc:
             show_status_msg(proc,view)
 
