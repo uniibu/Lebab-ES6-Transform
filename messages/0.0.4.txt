@@ -1,0 +1,5 @@
+Lebab-ES6-Transform 0.0.4 changelog
+
+CHANGES/FIXES
+
++ fix default user settings pointing to a wrong directory

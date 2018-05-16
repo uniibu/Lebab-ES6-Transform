@@ -19,7 +19,7 @@
         "children": [{
           "command": "open_file",
           "args": {
-            "file": "${packages}/Lebab-ES6-Transform/LebabTransform.sublime-settings"
+            "file": "${packages}/Lebab ES6 Transform/LebabTransform.sublime-settings"
           },
           "caption": "Settings – Default"
         }, {
